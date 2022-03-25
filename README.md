@@ -65,6 +65,8 @@ It returns a function that can be used to restart it and one that can be used to
 Hook that updated the return value every time the dimension of the window changes
 
 **Params**
+_nothing_
+
 **Returns**
 
 ```js
