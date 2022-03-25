@@ -11,7 +11,11 @@
     "react"
   ],
   "author": "Fabio Rosada",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Greendecision/CustomHooks"
+  },
   "dependencies": {
     "@types/js-cookie": "^3.0.1",
     "@types/node": "^17.0.23",

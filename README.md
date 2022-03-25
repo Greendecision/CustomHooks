@@ -58,7 +58,7 @@ It returns a function that can be used to restart it and one that can be used to
 - delay: time to wait before calling the callback (in milliseconds)
 
 **Returns**
-`[reset, clear]` (both functions that take no argument)
+`[reset, clear]` (both are functions that take no argument)
 
 ## useWindowSize
 
