@@ -20,3 +20,5 @@ export const useDebounce = (callback: () => void, delay: number, dependencies: u
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(clear, []);
 };
+
+export default useDebounce;

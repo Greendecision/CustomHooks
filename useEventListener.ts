@@ -15,3 +15,5 @@ export const useEventListener = (eventType, callback, element = window) => {
     return () => element.removeEventListener(eventType, handler);
   }, [eventType, element]);
 };
+
+export default useEventListener;

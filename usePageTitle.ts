@@ -41,3 +41,5 @@ export function usePageTitle(titleProps: PageTitlePropsType) {
 
   return setTitle;
 }
+
+export default usePageTitle;

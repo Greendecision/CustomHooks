@@ -52,3 +52,5 @@ export const useCookie = (
 
   return [value, updateCookie, deleteCookie];
 };
+
+export default useCookie;
