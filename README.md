@@ -75,3 +75,39 @@ _nothing_
   height: number,
 }
 ```
+
+## usePageTitle
+
+Hook that can be used to set the page title.
+It uses jquery and it relies on two classes: `HookPageTitle-container` and `HookPageTitle-text`.
+
+**Params**
+
+- titleProps: object containing `text: string` and `url: string`
+
+**Returns**
+
+- setTitle: a function that accepts a titleProps object, it can be used to update the title after the initialization.
+
+**Example**
+_ui/components/Navbar.tsx_
+
+```js
+import { PageTitleContainerClass, PageTitleTextClass } from "@greendecision/hooks/usePageTitle";
+
+[...]
+
+<Button className={PageTitleContainerClass}>
+  <div className={PageTitleTextClass} />
+</Button>
+```
+
+_ui/page/myPage.tsx_
+
+```js
+import { usePageTitle } from "@greendecision/hooks;
+
+[...]
+
+const setTitle = usePageTitle({ title: 'home', url: '/' })
+```
