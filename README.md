@@ -2,11 +2,11 @@
 
 A series of custom hooks used in various projects by [Greendecision](https://www.greendecision.eu/wp/)
 
-- useCookie
-- useDebounce
-- useEventListener
-- useTimeout
-- useWindowSize
+- [useCookie](#usecookie)
+- [useDebounce](#usedebounce)
+- [useEventListener](#useeventlistener)
+- [useTimeout](#usetimeout)
+- [useWindowSize](#usewindowsize)
 - [usePageTitle](#usepagetitle)
 
 ## useCookie
