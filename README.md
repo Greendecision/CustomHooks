@@ -7,6 +7,7 @@ A series of custom hooks used in various projects by [Greendecision](https://www
 - useEventListener
 - useTimeout
 - useWindowSize
+- [usePageTitle](#usepagetitle)
 
 ## useCookie
 
@@ -90,6 +91,7 @@ It uses jquery and it relies on two classes: `HookPageTitle-container` and `Hook
 - setTitle: a function that accepts a titleProps object, it can be used to update the title after the initialization.
 
 **Example**
+
 _ui/components/Navbar.tsx_
 
 ```js
@@ -106,8 +108,8 @@ _ui/page/myPage.tsx_
 
 ```js
 import { usePageTitle } from "@greendecision/hooks;
-
 [...]
-
 const setTitle = usePageTitle({ title: 'home', url: '/' })
+[...]
+setTitle({ title: 'new title', url: '/' })
 ```
