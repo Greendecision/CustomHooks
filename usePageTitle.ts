@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export interface PageTitlePropsType {
+  /** String that will be visualized */
   text?: string;
+  /** Url that will be pushed to the history once the title is clicked */
   url?: string;
 }
 
@@ -15,7 +17,7 @@ export const PageTitleTextClass = "HookPageTitle-text";
  * React hook used to update the page title (text and url)
  * It can be used once, in pages that have a static title
  * Or it can be used multiple times in pages that have a dynamic title.
- *
+ *---
  * ex: const updateTitle = usePageTitle({ text: 'initial title', url: '/' })
  * updateTitle({ text: 'new title', url: 'newUrl' })
  *
