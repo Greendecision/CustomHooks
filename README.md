@@ -8,6 +8,8 @@ A series of custom hooks used in various projects by [Greendecision](https://www
 - [useTimeout](#usetimeout)
 - [useWindowSize](#usewindowsize)
 - [usePageTitle](#usepagetitle)
+- [useAlert](#useAlert)
+- [useForm](#useForm)
 
 ## useCookie
 
@@ -77,10 +79,26 @@ _nothing_
 }
 ```
 
+## useSynchronousWindowSize
+
+Hook similar to `useWindowsSize` that synchronously keeps track of window resizing.
+
+**Params**
+_nothing_
+
+**Returns**
+
+```js
+{
+  width: number,
+  height: number,
+}
+```
+
 ## usePageTitle
 
 Hook that can be used to set the page title.
-It uses jquery and it relies on two classes: `HookPageTitle-container` and `HookPageTitle-text`.
+It uses jquery, and it relies on two classes: `HookPageTitle-container` and `HookPageTitle-text`.
 
 **Params**
 
@@ -107,9 +125,51 @@ import { PageTitleContainerClass, PageTitleTextClass } from "@greendecision/hook
 _ui/page/myPage.tsx_
 
 ```js
-import { usePageTitle } from "@greendecision/hooks;
+import { usePageTitle } from "@greendecision/hooks";
 [...]
 const setTitle = usePageTitle({ title: 'home', url: '/' })
 [...]
 setTitle({ title: 'new title', url: '/' })
 ```
+
+## useAlert
+
+Hook that uses `notistack` to enqueue alerts.  
+
+**Prerequisites**
+
+Install `notistack` on your project:
+```
+npm install notistack@latest-mui-v4
+yarn add notistack@latest-mui-v4
+```
+
+Then, the Snackbar provider should be included in the application:
+```js
+import { SnackbarProvider } from 'notistack';
+[...]
+<SnackbarProvider>
+    <App />
+</SnackbarProvider>
+[...]
+```
+
+**Returns**
+
+- showAlert: Adds an alert with optional action button(s) to current stack of alerts. It will be hidden after 3.5 seconds.
+- showAlertWithContent: Adds an alert with optional sub-content to current stack of alerts. It will be hidden after 3.5 seconds.
+
+**Example**
+
+```js
+import { PageTitleContainerClass, PageTitleTextClass } from "@greendecision/hooks/useAlert";
+
+[...]
+const { showAlert } = useAlert();
+showAlert("This is a stacked alert!", "info")
+showAlert("This is another one!", "error");
+```
+
+## useForm
+
+Hook for validating and submitting a form (e.g.: login, password change).
