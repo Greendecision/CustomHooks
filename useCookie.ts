@@ -19,7 +19,11 @@ export const useCookie = (
   key: string,
   defaultValue: string | object,
   options: Cookies.CookieAttributes = defaultOptions
-) => {
+): [
+  string | object | null,
+  (newValue: string | object, options?: Cookies.CookieAttributes) => void,
+  () => void
+] => {
   const [value, setValue] = useState<string | object | null>(() => {
     const cookie = Cookies.get(key);
     if (!cookie) {
