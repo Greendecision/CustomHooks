@@ -18,7 +18,7 @@ export const useForm =  <T extends Object>(
   const [errors, setErrors] = useState<StringType<T>>(initialErrorValues);
 
   const initialPristineValues = Object.keys(values).reduce((clone, k) => {
-    return { ...clone, [k]: !values[k] };
+    return { ...clone, [k]: !values[k] }; // TODO this is not correct, it gives a Typescript error, no idea of how to fix it
   }, {} as BooleanType<T>);
 
   const [arePristine, setArePristine] = useState<BooleanType<T>>(initialPristineValues);
