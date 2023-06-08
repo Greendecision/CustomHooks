@@ -51,7 +51,7 @@ export const useCookie = (
     [key]
   );
 
-  const deleteCookie = useCallback(() => {
+  const deleteCookie: () => void = useCallback(() => {
     Cookies.remove(key);
     setValue(null);
   }, [key]);
