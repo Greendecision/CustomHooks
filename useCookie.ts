@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 const defaultOptions: Cookies.CookieAttributes = {
   sameSite: "Strict",
   secure: true,
+  expires: new Date("9999-12-31"),
 };
 
 /**
