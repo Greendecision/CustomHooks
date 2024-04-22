@@ -1,6 +1,6 @@
 {
   "name": "@greendecision/hooks",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "A set of custom hooks that can be used to simplify the code logic",
   "main": "index.js",
   "scripts": {
