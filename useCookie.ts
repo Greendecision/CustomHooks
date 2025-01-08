@@ -2,9 +2,9 @@ import Cookies from "js-cookie";
 import { useCallback, useEffect, useState } from "react";
 
 const defaultOptions: Cookies.CookieAttributes = {
-  sameSite: "Strict",
-  secure: true,
-  expires: new Date("9999-12-31"),
+	sameSite: "Strict",
+	secure: true,
+	expires: 365,
 };
 
 interface optionsType {
@@ -85,7 +85,7 @@ export const useCookie: useCookieType = (
 
   /** function to update the cookie value */
   const updateCookie: updateCookieFunctionType = useCallback(
-    (newValue, newOptions) => {
+    (newValue: string | object, newOptions: optionsType) => {
       const nv =
         typeof newValue === "object" ? JSON.stringify(newValue) : newValue;
       Cookies.set(key, nv, { ...defaultOptions, ...newOptions?.cookieOptions });
