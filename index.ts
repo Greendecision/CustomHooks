@@ -5,4 +5,5 @@ export { useTimeout } from "./useTimeout";
 export { useWindowSize, useSynchronousWindowSize } from "./useWindowSize";
 export { usePageTitle } from "./usePageTitle";
 export { useAlert } from "./useAlert";
+export { useLocalStorage } from "./useLocalStorage";
 // export { useForm } from "./useForm";
