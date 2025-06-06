@@ -12,7 +12,7 @@ type deleteLocalStorageFunctionType = () => void;
 
 type useLocalStorageType = (
   key: string,
-  defaultValue: string,
+  defaultValue: string | object,
   options?: optionsType,
 ) => [
   string | null,
