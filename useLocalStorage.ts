@@ -6,7 +6,6 @@ type optionsType = {
 
 type updateLocalStorageFunctionType = (
   newValue: string | object,
-  options?: optionsType,
 ) => void;
 type deleteLocalStorageFunctionType = () => void;
 
@@ -15,7 +14,7 @@ type useLocalStorageType = (
   defaultValue: string | object,
   options?: optionsType,
 ) => [
-  string | null,
+  string | object | null,
   updateLocalStorageFunctionType,
   deleteLocalStorageFunctionType,
 ];
@@ -76,7 +75,7 @@ export const useLocalStorage: useLocalStorageType = (
 
   /** function to update the local storage value */
   const updateLocalStorage: updateLocalStorageFunctionType = useCallback(
-    (newValue: string | object, newOptions: optionsType) => {
+    (newValue: string | object) => {
       const nv =
         typeof newValue === "object" ? JSON.stringify(newValue) : newValue;
       localStorage.setItem(key, nv);

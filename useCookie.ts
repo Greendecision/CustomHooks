@@ -85,7 +85,7 @@ export const useCookie: useCookieType = (
 
   /** function to update the cookie value */
   const updateCookie: updateCookieFunctionType = useCallback(
-    (newValue: string | object, newOptions: optionsType) => {
+    (newValue: string | object, newOptions?: optionsType) => {
       const nv =
         typeof newValue === "object" ? JSON.stringify(newValue) : newValue;
       Cookies.set(key, nv, { ...defaultOptions, ...newOptions?.cookieOptions });
